@@ -75,19 +75,14 @@ result_ext <- hierarchical_clustering_and_metrics(
 ## Visualizations
 
 ### Correlation Plot
-![Correlation Plot](./path/to/correlation_plot.png)
+![Correlation Plot](./01_Corrplot_Spearman.png)
 
 ### Optimal Number of Clusters
-![Optimal Clusters](./path/to/optimal_clusters.png)
+![Optimal Clusters](./01_Optimal_Clusters_Determination.png)
 
-### Dendrogram
-![Dendrogram](./path/to/dendrogram.png)
 
-### Silhouette Plot
-![Silhouette Plot](./path/to/silhouette_plot.png)
-
-### PCA Plot
-![PCA Plot](./path/to/pca_plot.png)
+### Clustering Visualizations
+![Cluster_Visualizations](./02_Validation_Clustering_Plots.png)
 
 ---
 
@@ -103,15 +98,16 @@ result_ext <- hierarchical_clustering_and_metrics(
 │   ├── 01_Optimal_Clusters_Determination.png
 │   ├── 02_Validation_Clustering_Plots.png
 │   ├── Individual_Plots/
-│   │   ├── 01_ElbowPlot.png
-│   │   ├── 02_SilhouettePlot.png
-│   │   ├── 03_Gap_StatisticPlot.png
-│   │   ├── 04_Frequency_Optimal_Clustering.png
-│   │   ├── 05_Best_Disimilarity_Matrix.png
-│   │   ├── 06_HClust_Dendrogram.png
-│   │   ├── 07_Silhouette_Width_Plot.png
-│   │   └── 08_PCA.png
-│   └── HC_Report.xlsx
+│       ├── 01_ElbowPlot.png
+│       ├── 02_SilhouettePlot.png
+│       ├── 03_Gap_StatisticPlot.png
+│       ├── 04_Frequency_Optimal_Clustering.png
+│       ├── 05_Best_Disimilarity_Matrix.png
+│       ├── 06_HClust_Dendrogram.png
+│       ├── 07_Silhouette_Width_Plot.png
+│       └── 08_PCA.png
+└── HC_Report.xlsx
+
 ```
 
 ---
