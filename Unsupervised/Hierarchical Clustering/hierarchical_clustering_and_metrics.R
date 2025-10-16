@@ -20,6 +20,8 @@
 #'   Default: "Hierarchical_clustering"
 #' @param max_k_number Maximum number of clusters to evaluate. Default: 50
 #' @param nboot Number of bootstrap iterations for gap statistic calculation. Default: 500
+#' @param ties In the event of a tie, the higher number will be chosen as the number of 
+#'   clusters to display. Default: ‘max’. Can be changed to ‘min’.
 #'
 #' @return Dataframe with cluster assignments for each observation.
 #'   Additionally generates Excel reports and plots in the specified directory.
