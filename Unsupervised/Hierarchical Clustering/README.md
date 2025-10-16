@@ -104,7 +104,7 @@ hierarchical_clustering_and_metrics(metadata = bcancer,
 ├── 02_HClustering/
 │   ├── 01_Optimal_Clusters_Determination.png
 │   ├── 02_Validation_Clustering_Plots.png
-│   ├── Individual_Plots/
+│   └── Individual_Plots/
 │       ├── 01_ElbowPlot.png
 │       ├── 02_SilhouettePlot.png
 │       ├── 03_Gap_StatisticPlot.png
