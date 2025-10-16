@@ -80,22 +80,15 @@ hierarchical_clustering_and_metrics(metadata = bcancer,
 ---
 
 ## Visualizations
+<p align="center">
+  <img src="https://github.com/raul-omics-ai/Machine-Learning/blob/main/Unsupervised/Hierarchical%20Clustering/01_Optimal_Clusters_Determination.png" width="49%" height = "49%"/>
+  <img src="https://github.com/raul-omics-ai/Machine-Learning/blob/main/Unsupervised/Hierarchical%20Clustering/02_Validation_Clustering_Plots.png" width="49%" height = "49%"/>
+</p>
 
-### Correlation Plot
-![Correlation Plot](./01_Corrplot_Spearman.png)
-
-### Optimal Number of Clusters
-![Optimal Clusters](./01_Optimal_Clusters_Determination.png)
-
-
-### Clustering Visualizations
-![Cluster_Visualizations](./02_Validation_Clustering_Plots.png)
 
 ---
 
-## Output
-
-### Directory Structure
+## Directory Structure
 
 ```
 <output_dir>/
