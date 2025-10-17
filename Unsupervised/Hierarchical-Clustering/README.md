@@ -81,8 +81,8 @@ hierarchical_clustering_and_metrics(metadata = bcancer,
 
 ## Visualizations
 <p align="center">
-  <img src="https://github.com/raul-omics-ai/Machine-Learning/blob/main/Unsupervised/Hierarchical%20Clustering/src/01_Optimal_Clusters_Determination.png" width="49%" height = "49%"/>
-  <img src="https://github.com/raul-omics-ai/Machine-Learning/blob/main/Unsupervised/Hierarchical%20Clustering/src/02_Validation_Clustering_Plots.png" width="49%" height = "49%"/>
+  <img src="src/01_Optimal_Clusters_Determination.png" width="49%" height = "49%"/>
+  <img src="src/02_Validation_Clustering_Plots.png" width="49%" height = "49%"/>
 </p>
 
 
