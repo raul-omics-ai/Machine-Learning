@@ -103,7 +103,7 @@ Within that folder, all plots and reports for that model are saved.
 
 ## 🧠 Notes
 
-- The helper functions used for saving plots and creating folders (`save_ggplot()`, `create_sequential_dir()`, etc.) are sourced [insert path]. Make sure they are available in your working environment.
+- The helper functions used for saving plots and creating folders (`save_ggplot()`, `create_sequential_dir()`, etc.) are sourced Machine-Learning/lab_assistant/. Make sure they are available in your working environment.
 - You can modify the `transform_coeff` parameter to control how coefficients are displayed in the HTML report (e.g., `"exp"`, `"none"`, `"log10"`).
 
 ---
