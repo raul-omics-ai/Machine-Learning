@@ -41,17 +41,30 @@ model <- mixed_effect_lm(
 
 The following plots are automatically generated and saved in the output folder:
 
-1. **Diagnostic Plot**  
-   (Insert image here if desired)
-
+1. **Diagnostic Plot**
+<p align="center">
+  <img src="src/01_Diagnostic.png" alt="Diagnostic Plot" width="49%"/>
+<p>
+  
 2. **Forest Plot**  
-   (Insert image here if desired)
+<p align="center">
+  <img src="src/02_ForestPlot.png" alt="Forest Plot" width="49%">
+</p>
 
 3. **Effect Plot for Cuantitative Variables**  
-   (Insert image here if desired)
+<p align="center">
+  <img src="src/03_EffectPlot_Days.png" alt="Effect Plot for Cuantitative Variables" width="49%">
+</p>
 
 4. **Effect Plot for Cualitative Variables**  
-   (Insert image here if desired)
+<p align="center">
+  <img src="src/04_EffectPlot_multinomial.png" alt="Effect Plot for Cualitative Variables" width="49%">
+</p>
+
+5. **Pairwise Contrast Estimates Plot**
+<p align="center">
+  <img src="src/03_Contrast_Estimates_Plot_log.png" alt="Contrast Effect Plot" width="49%">
+</p>
 
 ---
 
@@ -68,7 +81,6 @@ Within that folder, all plots and reports for that model are saved.
     ├── ForestPlot.png
     ├── Contrast_Estimates_Plot_log.png
     ├── EffectPlot_Days.png
-    ├── EffectPlot_Subject.png
     ├── EffectPlot_Days_Subject.png
     ├── fit_01_LMM_Summary.html
     ├── Contrast_LMM_Summary.docx
