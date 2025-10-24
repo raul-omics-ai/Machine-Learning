@@ -110,24 +110,32 @@ linear_model_function <- function(formula_lm,
               width = 2000, height = 2000)
   
   # 3) Estimates Plot for Each Contrast
+   # 3) Estimates Plot for Each Contrast
   if(any(tipos_indep %in% c("character", "factor"))){
-    fixed_term <- sub(".*~", "", formula_lm) # extraer RHS (todo lo que está después de "~")
-    fixed_term <- gsub("\\([^)]*\\|[^)]*\\)", "", fixed_term)  # " Treatment + "
-    fixed_term <- gsub("\\+\\s*\\+", "+", fixed_term)   # quita ++ si aparecen
-    fixed_term <- gsub("^\\s*\\+|\\+\\s*$", "", fixed_term) # quitar + inicial / final
-    fixed_term <- trimws(fixed_term) 
     
-    res <- emmeans(fit, as.formula(paste0("pairwise ~ ", fixed_term)), infer = T) 
-    # Esto nos vale para calcular la media de los errores y sus  p-values, pero raravez se utilizan. 
-    # Lo voy a utilizar para generar un gráfico con las estimaciones de  todos los contrastes
+    cat("\n3. By Contrast Effect Plot (one per factor variable)\n")
     
-    cat("\n3.By Contrast Effect Plot \n")
-    pw_log_estimates <- res$contrasts %>% plot()
-    save_ggplot(pw_log_estimates, title = "Contrast_Estimates_Plot_log", 
-                folder = ruta_completa,
-                width = 2000, height = 2000)
-  }#if key for contrats estimates plot
-  
+    # Iterar sobre las variables categóricas
+    for(var_factor in names(tipos_indep)[tipos_indep %in% c("character", "factor")]){
+      print(paste0("Generating contrast plot for factor: ", var_factor))
+      
+      # Calcular los contrastes de esa variable individualmente
+      res_factor <- emmeans(fit, as.formula(paste0("pairwise ~ ", var_factor)), infer = TRUE)
+      
+      # Crear el gráfico de los contrastes
+      pw_plot <- plot(res_factor$contrasts) +
+        ggtitle(paste("Pairwise Contrasts for", var_factor))
+      
+      # Guardar el gráfico en la carpeta correspondiente
+      save_ggplot(
+        plot = pw_plot,
+        title = paste0("Contrast_Estimates_", var_factor),
+        folder = ruta_completa,
+        width = 2000,
+        height = 2000
+      )
+    }
+  }
   # 4) Effect Plot
   cat("\n4.Effect Plot \n")
   for(independ_var in seq(1, length(vars_indep))){
