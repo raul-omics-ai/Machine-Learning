@@ -1,0 +1,70 @@
+Instalación de RStudio en un ambiente conda
+#------------------------------------------#
+##### PREVIO A LA INSTALACIÓN NECESARIO ####
+#------------------------------------------#
+
+(base) endocrinohulp@LAPTOP-H3EU4UEE:~$ sudo apt -y install gdebi-core
+(base) endocrinohulp@LAPTOP-H3EU4UEE:~$ sudo apt install libnss3-dev libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev
+(base) endocrinohulp@LAPTOP-H3EU4UEE:~$ sudo apt-get install libasound2
+
+#------------------------------------------------#
+##### Instalación de R en la versión deseada #####
+#------------------------------------------------#
+
+(base) endocrinohulp@LAPTOP-H3EU4UEE:~$ conda create -n r_env_4.1.0 r-base=4.1.0 # Cambiar aquí la versión
+
+#--------------------------------#
+##### INSTALACIÓN DE RSTUDIO #####
+#--------------------------------#
+(base) endocrinohulp@LAPTOP-H3EU4UEE:~$ conda activate r_env_4.1.0
+(r_env_4.1.0) endocrinohulp@LAPTOP-H3EU4UEE:~$ conda install -c r r-essentials
+(r_env_4.1.0) endocrinohulp@LAPTOP-H3EU4UEE:~$ conda install -c r rstudio
+
+#------------------------------------------------#
+##### OPCIÓN 2 PARA LA INSTALACIÓN DE RSTUDIO ####
+#------------------------------------------------#
+
+# Previamente se tiene que descargar el archivo .deb de la versión de RStudio del siguiente link:
+# https://posit.co/download/rstudio-desktop/#download
+(base) endocrinohulp@LAPTOP-H3EU4UEE:~$ conda activate r_env_4.1.0
+(r_env_4.1.0) endocrinohulp@LAPTOP-H3EU4UEE:~$ sudo gdebi rstudio-2024.04.2-764-amd64.deb
+(r_env_4.1.0) endocrinohulp@LAPTOP-H3EU4UEE:~$ conda search --override-channels --channel conda-forge rstudio
+(r_env_4.1.0) endocrinohulp@LAPTOP-H3EU4UEE:~$ rstudio
+
+#---------------------------------------------------------------------------------------------#
+##### CREAR UN ARCHIVO EJECUTABLE PARA ABRIR LAS VERSIONES DE RSTUDIO CON LA VERSIÓN DE R #####
+#---------------------------------------------------------------------------------------------#
+
+# Hay que crear un archivo ejecutable con vim 
+(base) endocrinohulp@LAPTOP-H3EU4UEE:~$ vim launch_rstudio_r410.sh # Hay que cambiar el nombre del archivo según la versión
+
+# Esto hay que pegarlo modificarlo para cada versión de R que quiera utilizar
+
+#!/bin/bash
+# Activar el ambiente con R 4.1.0
+source ~/miniconda3/bin/activate r_env_4.1.0
+# Lanzar RStudio
+rstudio
+
+
+(base) endocrinohulp@LAPTOP-H3EU4UEE:~$ chmod +x launch_rstudio_r410.sh
+(base) endocrinohulp@LAPTOP-H3EU4UEE:~$ ./launch_rstudio_r410.sh # Aquí ya se lanza directamente RStudio con la versión de R que quiera
+
+
+#-----------------------------------------------------#
+#### OPCIÓN 3: CREAR UN AMBIENTE DE R Y DE RSTUDIO ####
+#-----------------------------------------------------#
+
+# FUENTE : https://stackoverflow.com/questions/72621461/cant-install-recent-version-of-rstudio-in-ubuntu-22-04-through-anaconda
+
+(base) rfernandez@PCS-PORT-2408:~$ conda create -n rstudio -c conda-forge rstudio-desktop r-base=4.1  
+
+# Con esta línea de script puedes descargar distintas versiones de R y de RStudio en distintos environments
+
+
+
+
+
+
+
+
